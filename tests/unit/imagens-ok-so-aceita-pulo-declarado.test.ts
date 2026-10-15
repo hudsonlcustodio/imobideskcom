@@ -105,7 +105,7 @@ describe("Genesis valida builds com publicação desativada", () => {
     let code = 0;
     try {
       execFileSync("bash", ["-c", SCRIPT], {
-        env: { ...process.env, REPOSITORIO: "hudsonlcustodio/GENESISTALKV177", EVENTO: "push", ALCANCE: "sim", PORTAO: "success", BUILD: "skipped", MANIFESTO: "skipped", APP: app, FUNDO: "success" },
+        env: { ...process.env, REPOSITORIO: "hudsonlcustodio/imobideskcom", EVENTO: "push", ALCANCE: "sim", PORTAO: "success", BUILD: "skipped", MANIFESTO: "skipped", APP: app, FUNDO: "success" },
         stdio: "ignore",
       });
     } catch { code = 1; }

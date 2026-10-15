@@ -60,6 +60,6 @@ grep -Fxq "$public_ip" <<< "$addresses" || fail_contabo 'DNS A não aponta para 
 git rev-parse --verify HEAD >/dev/null || fail_contabo 'Source precisa estar versionado.'
 [[ -z "$(git status --porcelain)" ]] || fail_contabo 'Working tree suja: versione o source antes do deploy.'
 origin="$(git remote get-url origin)"
-[[ "${origin%.git}" == https://github.com/hudsonlcustodio/GENESISTALKV177 ]] || fail_contabo 'Remote origin não é o repo Genesis.'
+[[ "${origin%.git}" == https://github.com/hudsonlcustodio/imobideskcom ]] || fail_contabo 'Remote origin não é o repo Genesis.'
 validate_genesis_config >/dev/null
 printf 'PASS: preflight Contabo (nenhum segredo exibido).\n'

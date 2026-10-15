@@ -242,10 +242,10 @@ ssh -p PORTA USUARIO@IP_DA_VPS
 Substitua `PORTA`, `USUARIO` e `IP_DA_VPS`. A porta SSH padrão é `22`.
 Os próximos comandos são executados dentro da VPS.
 
-### 2. Baixe o candidato validado
+### 2. Baixe o projeto
 
 ```bash
-git clone --branch genesis-v1.77.0-rc.1 --depth 1 https://github.com/hudsonlcustodio/GENESISTALKV177.git genesis-360-talk-ai
+git clone --depth 1 https://github.com/hudsonlcustodio/imobideskcom.git genesis-360-talk-ai
 cd genesis-360-talk-ai
 ```
 

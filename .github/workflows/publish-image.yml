@@ -404,7 +404,7 @@ jobs:
           load: true
           tags: deskcomm-smoke:pr
           build-args: |
-            APP_VERSION=${{ github.repository == 'hudsonlcustodio/GENESISTALKV177' && '1.77.0' || 'smoke' }}
+            APP_VERSION=${{ github.repository == 'hudsonlcustodio/imobideskcom' && '1.77.0' || 'smoke' }}
           # Mesmo escopo de cache do build-and-push: as camadas são idênticas,
           # então na prática este job reaproveita aquele build em vez de repeti-lo.
           cache-from: |
@@ -416,7 +416,7 @@ jobs:
           cache-to: ${{ github.event_name == 'pull_request' && format('type=gha,mode=max,scope=deskcommcrm-{0}', matrix.arch) || '' }}
 
       - name: Registrar imagem local Genesis do app
-        if: github.repository == 'hudsonlcustodio/GENESISTALKV177'
+        if: github.repository == 'hudsonlcustodio/imobideskcom'
         run: |
           set -euo pipefail
           docker tag deskcomm-smoke:pr genesis-talk-app:1.77.0
@@ -424,7 +424,7 @@ jobs:
           docker image inspect genesis-talk-app:1.77.0 > genesis-image-evidence/app.json
           git rev-parse HEAD > genesis-image-evidence/source-sha.txt
       - uses: actions/upload-artifact@v4
-        if: github.repository == 'hudsonlcustodio/GENESISTALKV177'
+        if: github.repository == 'hudsonlcustodio/imobideskcom'
         with:
           name: genesis-app-image-${{ matrix.arch }}
           path: genesis-image-evidence/
@@ -651,7 +651,7 @@ jobs:
           load: true
           tags: deskcomm-worker:pr
           build-args: |
-            APP_VERSION=${{ github.repository == 'hudsonlcustodio/GENESISTALKV177' && '1.77.0' || 'dev' }}
+            APP_VERSION=${{ github.repository == 'hudsonlcustodio/imobideskcom' && '1.77.0' || 'dev' }}
           # Mesmo escopo de cache do build-and-push, por imagem. Os dois jobs
           # correm em PARALELO, então o cache costuma estar frio no primeiro run
           # de um push e quente nos seguintes — "reaproveita aquele build" só
@@ -673,7 +673,7 @@ jobs:
           load: true
           tags: deskcomm-scheduler:pr
           build-args: |
-            APP_VERSION=${{ github.repository == 'hudsonlcustodio/GENESISTALKV177' && '1.77.0' || 'dev' }}
+            APP_VERSION=${{ github.repository == 'hudsonlcustodio/imobideskcom' && '1.77.0' || 'dev' }}
           cache-from: |
             type=gha,scope=deskcommcrm-scheduler-${{ matrix.arch }}
             type=gha,scope=deskcommcrm-scheduler
@@ -697,14 +697,14 @@ jobs:
           load: true
           tags: deskcomm-voice-agent:pr
           build-args: |
-            APP_VERSION=${{ github.repository == 'hudsonlcustodio/GENESISTALKV177' && '1.77.0' || 'dev' }}
+            APP_VERSION=${{ github.repository == 'hudsonlcustodio/imobideskcom' && '1.77.0' || 'dev' }}
           cache-from: |
             type=gha,scope=deskcommcrm-voice-agent-${{ matrix.arch }}
             type=gha,scope=deskcommcrm-voice-agent
           cache-to: ${{ github.event_name == 'pull_request' && format('type=gha,mode=max,scope=deskcommcrm-voice-agent-{0}', matrix.arch) || '' }}
 
       - name: Registrar imagens locais Genesis de fundo
-        if: github.repository == 'hudsonlcustodio/GENESISTALKV177'
+        if: github.repository == 'hudsonlcustodio/imobideskcom'
         run: |
           set -euo pipefail
           mkdir -p genesis-image-evidence
@@ -714,7 +714,7 @@ jobs:
           done
           git rev-parse HEAD > genesis-image-evidence/source-sha.txt
       - uses: actions/upload-artifact@v4
-        if: github.repository == 'hudsonlcustodio/GENESISTALKV177'
+        if: github.repository == 'hudsonlcustodio/imobideskcom'
         with:
           name: genesis-background-images-${{ matrix.arch }}
           path: genesis-image-evidence/

@@ -245,7 +245,7 @@ describe("o kit aponta para o que o CI realmente publica", () => {
     expect(COMUM).toContain(`local url="\${1:-${repo}.git}" ref`);
     for (const dockerfile of ["Dockerfile", "Dockerfile.worker", "Dockerfile.scheduler"]) {
       expect(fs.readFileSync(path.join(RAIZ, dockerfile), "utf8")).toContain(
-        'org.opencontainers.image.source="https://github.com/hudsonlcustodio/GENESISTALKV177"',
+        'org.opencontainers.image.source="https://github.com/hudsonlcustodio/imobideskcom"',
       );
     }
   });

@@ -3,7 +3,7 @@ set -Eeuo pipefail
 readonly CONTABO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 readonly GENESIS_ROOT="$(cd "$CONTABO_DIR/../.." && pwd -P)"
 cd "$GENESIS_ROOT"
-export REPO_URL=https://github.com/hudsonlcustodio/GENESISTALKV177.git
+export REPO_URL=https://github.com/hudsonlcustodio/imobideskcom.git
 export GENESIS_CONTABO=1
 source "$GENESIS_ROOT/hostgator-setup-kit/_common.sh"
 fail_contabo() { printf 'BLOCKED: %s\n' "$*" >&2; exit 1; }

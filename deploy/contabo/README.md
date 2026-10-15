@@ -1,6 +1,6 @@
 # GENESIS TALK 1.77.0 — Contabo
 
-Release manual do source em `https://github.com/hudsonlcustodio/GENESISTALKV177`.
+Release manual do source em `https://github.com/hudsonlcustodio/imobideskcom`.
 Não use `docker-compose.prod.yml` sozinho: seus defaults ainda são Deskcomm.
 Não execute `update.sh`, `agent.sh` ou o instalador herdado diretamente nesta
 release Genesis. Auto-update/GHCR Genesis permanecem **DEFERRED**.
@@ -26,7 +26,7 @@ Prepare um Supabase com `public` vazio. Configure Auth Site URL e redirect
 Contabo; o template contém somente valores fictícios e campos vazios.
 
 ```bash
-git clone https://github.com/hudsonlcustodio/GENESISTALKV177.git genesis-talk
+git clone https://github.com/hudsonlcustodio/imobideskcom.git genesis-talk
 cd genesis-talk
 cp deploy/contabo/.env.example .env
 chmod 600 .env
@@ -49,7 +49,7 @@ Nenhum segredo entra em `NEXT_PUBLIC_*`; anon key é pública por contrato Supab
 Instalação nova, sem `.env` nem `.runtime/supabase` existentes:
 
 ```bash
-git clone https://github.com/hudsonlcustodio/GENESISTALKV177.git genesis-talk
+git clone https://github.com/hudsonlcustodio/imobideskcom.git genesis-talk
 cd genesis-talk
 bash deploy/contabo/install.sh --single-server --domain crm.SEU_DOMINIO.com.br
 ```
