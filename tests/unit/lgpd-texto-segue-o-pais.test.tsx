@@ -1,4 +1,4 @@
-// Genesis 1.77: fixtures de e-mail preservam conteúdo/links; apenas as duas cores de texto seguem a identidade oficial autorizada.
+// IMOBI CRM: fixtures de e-mail preservam conteúdo/links; apenas as duas cores de texto seguem a identidade oficial autorizada.
 /**
  * O QUE O TITULAR E O ENCARREGADO LEEM SEGUE O PAÍS DA ORGANIZAÇÃO — e o
  * Brasil fica byte a byte igual (doc 88, Portugal no seletor).
