@@ -25,64 +25,64 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* ─────────────────────────────────────────────────────────────────────────
-   GENESIS TALK — Design System tokens (Genesis 360 · density Aerada)
-   Source of truth: /app/design/lib/tokens.ts (Genesis 360-derived accent ramp)
+   IMOBI CRM — Design System tokens (IMOBI CRM · density Aerada)
+   Source of truth: /app/design/lib/tokens.ts (IMOBI CRM-derived accent ramp)
    Light + dark drawn separately (NOT inverted).
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
-  /* GENESIS 360 — official anchors. Intermediate accent stops are derived. */
-  --genesis-lime: #d4ff00;
-  --genesis-green: #00e676;
-  --genesis-deep: #071b33;
-  --genesis-cyan: #19c2ff;
-  --genesis-gray: #52616f;
-  --genesis-white: #f7fafc;
+  /* Manual IMOBI CRM: cores oficiais. */
+  --imobi-purple: #7b3fa4;
+  --imobi-orange: #f57c00;
+  --imobi-deep: #5e2d83;
+  --imobi-lilac: #d8c2e8;
+  --imobi-graphite: #4a4a4a;
+  --imobi-white: #ffffff;
 
   /* Surfaces (light) */
-  --color-bg: #f7fafc;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-elevated: #eef4f8;
+  --color-surface-elevated: #f7f3fa;
   --color-overlay: rgba(7, 27, 51, 0.42);
 
   /* Text (light) */
-  --color-text: #071b33;
-  --color-text-muted: #52616f;
-  --color-text-subtle: #617383;
+  --color-text: #261136;
+  --color-text-muted: #4a4a4a;
+  --color-text-subtle: #706477;
 
   /* Borders (light) */
-  --color-border: #dce6ee;
-  --color-border-strong: #bccdd9;
+  --color-border: #e5dbea;
+  --color-border-strong: #cdbbd8;
 
-  /* Accent — GENESIS 360 derived ramp (official anchors documented below) */
-  --color-accent-50: #effff5;
-  --color-accent-100: #d8ffea;
-  --color-accent-200: #a7f8cf;
-  --color-accent-300: #6af2b0;
-  --color-accent-400: #39ed94;
-  --color-accent-500: #d4ff00;
-  --color-accent-600: #16df79;
-  --color-accent-700: #00e676;
-  --color-accent-800: #008747;
-  --color-accent-900: #006b3a;
-  --color-accent-950: #071b33;
-  --color-accent: var(--color-accent-900);
+  /* Accent — IMOBI CRM derived ramp (official anchors documented below) */
+  --color-accent-50: #faf6fc;
+  --color-accent-100: #f2e9f7;
+  --color-accent-200: #e6d5ef;
+  --color-accent-300: #d8c2e8;
+  --color-accent-400: #b58ace;
+  --color-accent-500: #7b3fa4;
+  --color-accent-600: #703495;
+  --color-accent-700: #5e2d83;
+  --color-accent-800: #50266f;
+  --color-accent-900: #43205e;
+  --color-accent-950: #261136;
+  --color-accent: var(--color-accent-500);
   --color-accent-fg: #ffffff;
   --color-accent-soft: var(--color-accent-100);
   --color-accent-hover: var(--color-accent-950);
 
   /* Neutrals — blue gray (11 stops, light) */
-  --color-neutral-50: #f7fafc;
-  --color-neutral-100: #eef4f8;
-  --color-neutral-200: #dce6ee;
-  --color-neutral-300: #bccdd9;
-  --color-neutral-400: #93a7b6;
-  --color-neutral-500: #617383;
-  --color-neutral-600: #52616f;
-  --color-neutral-700: #334c62;
-  --color-neutral-800: #163047;
-  --color-neutral-900: #071b33;
-  --color-neutral-950: #041225;
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #f7f3fa;
+  --color-neutral-200: #e5dbea;
+  --color-neutral-300: #cdbbd8;
+  --color-neutral-400: #a995b5;
+  --color-neutral-500: #706477;
+  --color-neutral-600: #4a4a4a;
+  --color-neutral-700: #594367;
+  --color-neutral-800: #402750;
+  --color-neutral-900: #261136;
+  --color-neutral-950: #180a24;
 
   /* States (light) */
   --color-success: #008747;
@@ -271,30 +271,30 @@
    (lib/branding/css.ts), que só ganha consumidor com a tela de marca.
    ───────────────────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --color-bg: #f7fafc;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-elevated: #eef4f8;
+  --color-surface-elevated: #f7f3fa;
   --color-overlay: rgba(7, 27, 51, 0.42);
-  --color-text: #071b33;
-  --color-text-muted: #52616f;
-  --color-text-subtle: #617383;
-  --color-border: #dce6ee;
-  --color-border-strong: #bccdd9;
-  --color-accent: var(--color-accent-900);
+  --color-text: #261136;
+  --color-text-muted: #4a4a4a;
+  --color-text-subtle: #706477;
+  --color-border: #e5dbea;
+  --color-border-strong: #cdbbd8;
+  --color-accent: var(--color-accent-500);
   --color-accent-fg: #ffffff;
   --color-accent-soft: var(--color-accent-100);
   --color-accent-hover: var(--color-accent-950);
-  --color-neutral-50: #f7fafc;
-  --color-neutral-100: #eef4f8;
-  --color-neutral-200: #dce6ee;
-  --color-neutral-300: #bccdd9;
-  --color-neutral-400: #93a7b6;
-  --color-neutral-500: #617383;
-  --color-neutral-600: #52616f;
-  --color-neutral-700: #334c62;
-  --color-neutral-800: #163047;
-  --color-neutral-900: #071b33;
-  --color-neutral-950: #041225;
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #f7f3fa;
+  --color-neutral-200: #e5dbea;
+  --color-neutral-300: #cdbbd8;
+  --color-neutral-400: #a995b5;
+  --color-neutral-500: #706477;
+  --color-neutral-600: #4a4a4a;
+  --color-neutral-700: #594367;
+  --color-neutral-800: #402750;
+  --color-neutral-900: #261136;
+  --color-neutral-950: #180a24;
   --color-success: #008747;
   --color-success-bg: rgba(0, 135, 71, 0.12);
   --color-success-fg: #006b3a;
@@ -349,49 +349,49 @@
 
 [data-theme="dark"] {
   /* Surfaces (dark — drawn) */
-  --color-bg: #071b33;
-  --color-surface: #0d253e;
-  --color-surface-elevated: #16334c;
+  --color-bg: #1b0d2b;
+  --color-surface: #28143b;
+  --color-surface-elevated: #351e49;
   --color-overlay: rgba(0, 0, 0, 0.55);
 
   /* Text (dark) */
-  --color-text: #f7fafc;
-  --color-text-muted: #a0b6c8;
-  --color-text-subtle: #829bad;
+  --color-text: #ffffff;
+  --color-text-muted: #d8c2e8;
+  --color-text-subtle: #bba3cc;
 
   /* Borders (dark) */
-  --color-border: #28435b;
-  --color-border-strong: #3b566e;
+  --color-border: #513563;
+  --color-border-strong: #6b4d7d;
 
   /* Accent stays same hex stops; default shifts up for dark contrast */
-  --color-accent-50: #effff5;
-  --color-accent-100: #d8ffea;
-  --color-accent-200: #a7f8cf;
-  --color-accent-300: #6af2b0;
-  --color-accent-400: #39ed94;
-  --color-accent-500: #d4ff00;
-  --color-accent-600: #16df79;
-  --color-accent-700: #00e676;
-  --color-accent-800: #008747;
-  --color-accent-900: #006b3a;
-  --color-accent-950: #071b33;
+  --color-accent-50: #faf6fc;
+  --color-accent-100: #f2e9f7;
+  --color-accent-200: #e6d5ef;
+  --color-accent-300: #d8c2e8;
+  --color-accent-400: #b58ace;
+  --color-accent-500: #7b3fa4;
+  --color-accent-600: #703495;
+  --color-accent-700: #5e2d83;
+  --color-accent-800: #50266f;
+  --color-accent-900: #43205e;
+  --color-accent-950: #261136;
   --color-accent: var(--color-accent-400);
-  --color-accent-fg: #071b33;
-  --color-accent-soft: rgba(0, 230, 118, 0.16);
+  --color-accent-fg: #261136;
+  --color-accent-soft: rgba(181, 138, 206, 0.16);
   --color-accent-hover: var(--color-accent-300);
 
   /* Neutrals — blue gray (11 stops, dark) */
-  --color-neutral-50: #f7fafc;
-  --color-neutral-100: #dce6ee;
-  --color-neutral-200: #becfdd;
-  --color-neutral-300: #a0b6c8;
-  --color-neutral-400: #829bad;
-  --color-neutral-500: #3b566e;
-  --color-neutral-600: #28435b;
-  --color-neutral-700: #16334c;
-  --color-neutral-800: #0d253e;
-  --color-neutral-900: #071b33;
-  --color-neutral-950: #041225;
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #f2e9f7;
+  --color-neutral-200: #e6d5ef;
+  --color-neutral-300: #d8c2e8;
+  --color-neutral-400: #bba3cc;
+  --color-neutral-500: #6b4d7d;
+  --color-neutral-600: #513563;
+  --color-neutral-700: #351e49;
+  --color-neutral-800: #28143b;
+  --color-neutral-900: #1b0d2b;
+  --color-neutral-950: #11071c;
 
   /* States (dark) */
   --color-success: #39ed94;
@@ -434,7 +434,7 @@
   --input: var(--color-border);
   --ring: var(--color-accent-400);
   /* ---- Agenda · cor de pessoa (tema escuro) ----------------------------
-   * Mais claras e menos saturadas que as do claro: sobre `#071b33` a versão
+   * Mais claras e menos saturadas que as do claro: sobre `#1b0d2b` a versão
    * escura de cada matiz sumiria. Mesma ordem, mesmos nomes.
    */
   --agenda-pessoa-1: #f89080;
@@ -551,7 +551,7 @@
 
   /* Tipografia */
   --font-sans:
-    "DIN Next", var(--font-interface), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Poppins", var(--font-interface), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
@@ -789,7 +789,7 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family:
-      "DIN Next",
+      "Poppins",
       var(--font-interface),
       ui-sans-serif,
       system-ui,
@@ -1424,7 +1424,7 @@
    tem de respeitar isso.
 
    As rampas são desenhadas separadamente, não invertidas — no claro a 500
-   (#617383) é mais ESCURA que a 400 (#93a7b6), e no escuro a 500 (#3b566e)
+   (#617383) é mais ESCURA que a 400 (#93a7b6), e no escuro a 500 (#6b4d7d)
    também é. Contra fundo claro, mais escuro = mais contraste; contra fundo
    escuro, mais escuro = MENOS contraste. Usar a 500 nos dois temas daria uma
    faixa que realça no claro e APAGA no escuro, caindo abaixo do piso justamente

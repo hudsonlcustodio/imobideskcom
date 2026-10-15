@@ -10,17 +10,17 @@ Os arquivos são os **servidos pelo próprio Google Fonts**, sem nenhuma
 alteração nossa. Família, pesos, eixos e cobertura de caracteres são os mesmos
 que o `next/font/google` baixava.
 
-| Arquivo | Família | Pesos | Cobertura | Origem (fonts.gstatic.com) |
-|---|---|---|---|---|
-| `atkinson-hyperlegible-{400,700}-latin-latin-ext.woff2` | Atkinson Hyperlegible | 400, 700 | latin + latin-ext | `atkinsonhyperlegible/v12` |
-| `ibm-plex-mono-{400,500}-latin-latin-ext.woff2` | IBM Plex Mono | 400, 500 | latin + latin-ext | `ibmplexmono/v20` |
-| `bricolage-grotesque-200-800-latin.woff2` | Bricolage Grotesque | variável 200–800 | latin | `bricolagegrotesque/v9` |
-| `plus-jakarta-sans-200-800-latin.woff2` | Plus Jakarta Sans | variável 200–800 | latin | `plusjakartasans/v12` |
-| `fraunces-100-900-latin.woff2` | Fraunces | variável 100–900 + `opsz`, `SOFT`, `WONK` | latin | `fraunces/v38` |
-| `manrope-200-800-latin.woff2` | Manrope | variável 200–800 | latin | `manrope/v20` |
-| `source-serif-4-200-900-latin.woff2` | Source Serif 4 | variável 200–900 | latin | `sourceserif4/v14` |
-| `ibm-plex-sans-300-700-latin.woff2` | IBM Plex Sans | variável, usada em 300–700 | latin | `ibmplexsans/v23` |
-| `jetbrains-mono-100-800-latin.woff2` | JetBrains Mono | variável 100–800 | latin | `jetbrainsmono/v24` |
+| Arquivo                                                 | Família               | Pesos                                     | Cobertura         | Origem (fonts.gstatic.com) |
+| ------------------------------------------------------- | --------------------- | ----------------------------------------- | ----------------- | -------------------------- |
+| `atkinson-hyperlegible-{400,700}-latin-latin-ext.woff2` | Atkinson Hyperlegible | 400, 700                                  | latin + latin-ext | `atkinsonhyperlegible/v12` |
+| `ibm-plex-mono-{400,500}-latin-latin-ext.woff2`         | IBM Plex Mono         | 400, 500                                  | latin + latin-ext | `ibmplexmono/v20`          |
+| `bricolage-grotesque-200-800-latin.woff2`               | Bricolage Grotesque   | variável 200–800                          | latin             | `bricolagegrotesque/v9`    |
+| `plus-jakarta-sans-200-800-latin.woff2`                 | Plus Jakarta Sans     | variável 200–800                          | latin             | `plusjakartasans/v12`      |
+| `fraunces-100-900-latin.woff2`                          | Fraunces              | variável 100–900 + `opsz`, `SOFT`, `WONK` | latin             | `fraunces/v38`             |
+| `manrope-200-800-latin.woff2`                           | Manrope               | variável 200–800                          | latin             | `manrope/v20`              |
+| `source-serif-4-200-900-latin.woff2`                    | Source Serif 4        | variável 200–900                          | latin             | `sourceserif4/v14`         |
+| `ibm-plex-sans-300-700-latin.woff2`                     | IBM Plex Sans         | variável, usada em 300–700                | latin             | `ibmplexsans/v23`          |
+| `jetbrains-mono-100-800-latin.woff2`                    | JetBrains Mono        | variável 100–800                          | latin             | `jetbrainsmono/v24`        |
 
 ## Como baixar de novo
 
@@ -46,3 +46,9 @@ curl -sA "$UA" 'https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:40
 
 Todas as famílias são distribuídas sob a SIL Open Font License 1.1 — texto e
 avisos de copyright em [`OFL.txt`](OFL.txt).
+
+## IMOBI CRM — Poppins
+
+Poppins Light, Regular, Medium, SemiBold e Bold são incorporadas em `poppins/`.
+Fonte: [Google Fonts](https://github.com/google/fonts/tree/main/ofl/poppins).
+Licença e copyright próprios em [poppins/OFL.txt](poppins/OFL.txt).

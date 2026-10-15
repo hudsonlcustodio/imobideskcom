@@ -323,7 +323,7 @@ describe("o bloco emitido não pode contradizer o globals.css", () => {
   it("a caminhada de fato ANDA — e a emissão anda junto", () => {
     // Guarda de vacuidade da sabotagem: se nenhuma semente deslocasse, emitir a
     // rampa crua e emiti-la deslocada dariam o mesmo texto, e os testes acima
-    // seriam verdes contra o defeito. Com os papéis Genesis, 3 combos
+    // seriam verdes contra o defeito. Com os papéis IMOBI, 9 combos
     // (semente × tema) andam; a calibração Sage vive na fixture upstream.
     let andaram = 0;
     for (const hex of SEMENTES) {
@@ -343,28 +343,28 @@ describe("o bloco emitido não pode contradizer o globals.css", () => {
         );
       }
     }
-    expect(andaram).toBe(3);
+    expect(andaram).toBe(9);
   });
 });
 
 describe("controle positivo — o produto sem marca não pode se mexer", () => {
-  it("Genesis Lima reproduz os pares medidos do CSS emitido", () => {
-    // Canary for the Genesis seed with current contrast roles. Legacy Sage
+  it("IMOBI Roxo reproduz os pares medidos do CSS emitido", () => {
+    // Canary for the IMOBI seed with current contrast roles. Legacy Sage
     // calibration remains asserted in branding-contraste/branding-rampa.
-    const cor = corDe("#d4ff00");
+    const cor = corDe("#7b3fa4");
     expect(cor.derivada?.claro.deslocamento).toBe(0);
     expect(cor.derivada?.escuro.deslocamento).toBe(0);
 
-    const p = pintadosDaSemente("#d4ff00");
-    // Medições recalibradas para as superfícies do manual Genesis (08/10/2026).
-    expect(foco(p.claro, "--color-bg")).toBeCloseTo(3.42, 2);
-    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(3.23, 2);
+    const p = pintadosDaSemente("#7b3fa4");
+    // Medições recalibradas para as superfícies do manual IMOBI (15/10/2026).
+    expect(foco(p.claro, "--color-bg")).toBeCloseTo(10.87, 2);
+    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(9.92, 2);
     // Escuro: pares derivados da régua Genesis; o anel mantém o piso 3:1.
-    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(15.35, 2);
-    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(11.56, 2);
+    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(5.61, 2);
+    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(4.46, 2);
     // Superfícies soft são compostas sobre sua base antes de medir.
-    expect(foco(p.escuro, "--color-accent-soft@--color-surface")).toBeCloseTo(8.73, 2);
-    expect(foco(p.escuro, "--color-accent-soft@--color-surface-elevated")).toBeCloseTo(7.32, 2);
+    expect(foco(p.escuro, "--color-accent-soft@--color-surface")).toBeCloseTo(4.05, 2);
+    expect(foco(p.escuro, "--color-accent-soft@--color-surface-elevated")).toBeCloseTo(3.52, 2);
   });
 
   it("sem marca configurada nada é injetado, e a tela fica como está", () => {
@@ -378,10 +378,10 @@ describe("a navy #0f172a — o defeito que a prova em tela achou", () => {
   it("os quatro números do anel de foco, agora acima do piso", () => {
     // A navy continua calibrando a caminhada que corrige o foco no escuro.
     const p = pintadosDaSemente("#0f172a");
-    expect(foco(p.claro, "--color-bg")).toBeCloseTo(16.62, 2);
-    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(15.7, 2);
-    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(5.0, 2);
-    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(3.77, 2);
+    expect(foco(p.claro, "--color-bg")).toBeCloseTo(17.42, 2);
+    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(15.89, 2);
+    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(5.33, 2);
+    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(4.24, 2);
     for (const superficie of ["--color-bg", "--color-surface-elevated"] as const) {
       expect(foco(p.escuro, superficie), superficie).toBeGreaterThanOrEqual(PISOS.componente);
     }

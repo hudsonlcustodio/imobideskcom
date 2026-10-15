@@ -1,4 +1,4 @@
-// Design tokens for GENESIS TALK showcase.
+// Design tokens for IMOBI CRM showcase.
 // "Soft-tech / calmo" — neutros desaturados (greige/warm-gray), accent não-saturado.
 // 5-Constraint Rule applied: Shape, Color (exact hex), Typography, Motion, Layout.
 
@@ -40,12 +40,12 @@ export type PaletteDef = {
 export const PALETTES: Record<PaletteId, PaletteDef> = {
   sage: {
     id: "sage",
-    name: "Genesis 360",
-    description: "Rampa derivada dos anchors oficiais GENESIS 360.",
+    name: "IMOBI CRM",
+    description: "Rampa derivada dos anchors oficiais IMOBI CRM.",
     accent: {
-      50: "#f3ffe8", 100: "#e4ffc7", 200: "#c8ff91", 300: "#a7f35b",
-      400: "#8ae532", 500: "#7ed321", 600: "#39c82b", 700: "#00c853",
-      800: "#008f4b", 900: "#0b5d45", 950: "#0b3d3a",
+      50: "#faf6fc", 100: "#f2e9f7", 200: "#e6d5ef", 300: "#d8c2e8",
+      400: "#b58ace", 500: "#7b3fa4", 600: "#703495", 700: "#5e2d83",
+      800: "#50266f", 900: "#43205e", 950: "#261136",
     },
     neutralLight: {
       50: "#faf9f6", 100: "#f3f1ec", 200: "#e7e3da", 300: "#d2cdbf",
@@ -59,7 +59,7 @@ export const PALETTES: Record<PaletteId, PaletteDef> = {
     },
     states: {
       light: { success: "#5a8a5f", warning: "#b07a2b", error: "#a94a3c", info: "#4a7a93" },
-      dark:  { success: "#8ae532", warning: "#d09455", error: "#c87263", info: "#7da9bf" },
+      dark:  { success: "#b58ace", warning: "#d09455", error: "#c87263", info: "#7da9bf" },
     },
     surfaces: {
       light: { bg: "#faf9f6", surface: "#ffffff", surfaceElevated: "#f5f3ee", text: "#1c1a16", textMuted: "#5d594f", border: "#e7e3da" },
