@@ -107,11 +107,11 @@ describe("conversões de cor", () => {
 describe("rampaDeSemente — catraca de calibração contra o design system", () => {
   const esperados = stopsSageDoCss();
 
-  it("preserva as três âncoras oficiais da rampa Genesis", () => {
+  it("preserva as três âncoras oficiais da rampa IMOBI CRM", () => {
     const raiz = blocoRoot(CSS);
-    expect(raiz).toContain("--color-accent-500: #d4ff00;");
-    expect(raiz).toContain("--color-accent-700: #00e676;");
-    expect(raiz).toContain("--color-accent-950: #071b33;");
+    expect(raiz).toContain("--color-accent-500: #7b3fa4;");
+    expect(raiz).toContain("--color-accent-700: #5e2d83;");
+    expect(raiz).toContain("--color-accent-950: #261136;");
   });
 
   it("lê 11 stops distintos do globals.css (guarda de vacuidade)", () => {

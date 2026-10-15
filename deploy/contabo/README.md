@@ -1,9 +1,9 @@
-# GENESIS TALK 1.77.0 — Contabo
+# IMOBI CRM 1.77.0 — Contabo
 
 Release manual do source em `https://github.com/hudsonlcustodio/imobideskcom`.
 Não use `docker-compose.prod.yml` sozinho: seus defaults ainda são Deskcomm.
 Não execute `update.sh`, `agent.sh` ou o instalador herdado diretamente nesta
-release Genesis. Auto-update/GHCR Genesis permanecem **DEFERRED**.
+release IMOBI CRM. Auto-update/GHCR IMOBI CRM permanecem **DEFERRED**.
 
 ## Pré-requisitos
 
@@ -15,7 +15,7 @@ para a VPS, 80/443 livres. Esta rota usa Caddy; proxy já existente precisa de
 integração própria validada. Não interrompa o proxy existente para liberar portas.
 
 Clone o repo e faça checkout do commit revisado, mantendo a árvore limpa.
-Os scripts exportam `REPO_URL` Genesis e não invocam o clonador Deskcomm.
+Os scripts exportam `REPO_URL` IMOBI CRM e não invocam o clonador Deskcomm.
 O override precisa ser usado por último; seus paths são relativos ao PRIMEIRO
 compose, que fica na raiz, conforme semântica do Compose.
 
@@ -26,8 +26,8 @@ Prepare um Supabase com `public` vazio. Configure Auth Site URL e redirect
 Contabo; o template contém somente valores fictícios e campos vazios.
 
 ```bash
-git clone https://github.com/hudsonlcustodio/imobideskcom.git genesis-talk
-cd genesis-talk
+git clone https://github.com/hudsonlcustodio/imobideskcom.git imobi-crm
+cd imobi-crm
 cp deploy/contabo/.env.example .env
 chmod 600 .env
 # Preencher credenciais/domínio no servidor; nunca enviar segredos ao Git.
@@ -49,15 +49,15 @@ Nenhum segredo entra em `NEXT_PUBLIC_*`; anon key é pública por contrato Supab
 Instalação nova, sem `.env` nem `.runtime/supabase` existentes:
 
 ```bash
-git clone https://github.com/hudsonlcustodio/imobideskcom.git genesis-talk
-cd genesis-talk
+git clone https://github.com/hudsonlcustodio/imobideskcom.git imobi-crm
+cd imobi-crm
 bash deploy/contabo/install.sh --single-server --domain crm.SEU_DOMINIO.com.br
 ```
 
 Reutiliza `hostgator-setup-kit/install-single-server.sh --prepare-only`: mesma
 ref/hash de Supabase, segredos, rede por instalação e Caddyfile single-server.
 `--prepare-only` termina antes de chamar o instalador Deskcomm; o wrapper
-completa os segredos do app e faz build/deploy Genesis. A senha inicial fica em
+completa os segredos do app e faz build/deploy IMOBI CRM. A senha inicial fica em
 `.runtime/admin-credentials`, protegida; não é exibida pelo wrapper.
 
 Se a preparação falhar, inspecione os logs protegidos e o estado criado antes
@@ -89,7 +89,7 @@ docker compose --env-file .env -f docker-compose.prod.yml -f deploy/contabo/dock
 ```
 
 No single-server acrescente `-f docker-compose.single-server.yml` ANTES do
-override Genesis. Se usa CA própria Supabase, inclua o overlay CA como faz o
+override IMOBI CRM. Se usa CA própria Supabase, inclua o overlay CA como faz o
 wrapper. Nunca execute `config` sem redirecionamento privado: contém secrets.
 
 ## Configuração do Supabase
@@ -101,7 +101,7 @@ IA e SMTP continuam nas telas existentes da plataforma; não há troca de banco 
 uma sessão do CRM. O modo single-server continua usando o instalador existente.
 O template Contabo mapeia as mesmas variáveis; preserve os segredos de cifra
 que o instalador gerou. Nunca use `install.sh` vendor para atualizar uma instalação
-Genesis: o deploy manual desta pasta constrói as imagens Genesis.
+IMOBI CRM: o deploy manual desta pasta constrói as imagens IMOBI CRM.
 
 ## Backup, restore e rollback
 
@@ -178,11 +178,11 @@ continuam para a homologação futura autorizada pelo dono.
 Smoke sem autenticação prova TCP, health/version, IDs das imagens executadas,
 worker/scheduler healthy e login/health HTTPS com TLS válido. Não prova pairing,
 mensagem real, Inbox autenticado, tenant isolation ou jornada humana/IA.
-E2E autenticado usa seed canônico e os cinco viewports Genesis; a evidência final
+E2E autenticado usa seed canônico e os cinco viewports IMOBI CRM; a evidência final
 está em `docs/genesis/PRODUCTION-READINESS-v1.77.md`. Não declare produção pronta
 sem restore/security/runtime realmente provados.
 
-Para o gate de banco nesta árvore sem releases Genesis, execute em Linux:
+Para o gate de banco nesta árvore sem releases IMOBI CRM, execute em Linux:
 `CONFERENCIA_KIT_UPSTREAM_REPO=melgarafael/DeskcommCRM pnpm test:db`.
 Isso confere as regras do kit local e das releases históricas do vendor contra
-a baseline Genesis; usa refs separados e não habilita o updater/publicação.
+a baseline IMOBI CRM; usa refs separados e não habilita o updater/publicação.

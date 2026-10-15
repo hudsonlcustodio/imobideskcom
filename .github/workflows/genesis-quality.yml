@@ -1,8 +1,9 @@
 name: Genesis Quality Gate
 on:
+  workflow_dispatch: {}
   pull_request:
   push:
-    branches: [main]
+    branches: [main, codex/finalizacao-operacional-v177]
 
 permissions:
   contents: read
@@ -40,4 +41,5 @@ jobs:
         with:
           name: genesis-recovery-${{ github.event.pull_request.head.sha || github.sha }}
           path: .runtime/recovery/**/result.json
+          include-hidden-files: true
           if-no-files-found: error

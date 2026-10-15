@@ -81,9 +81,9 @@ def tick(config, now=None):
     signature = hashlib.sha256(",".join(sorted(issues)).encode()).hexdigest() if issues else None
     event = None
     if issues and state["failures"] >= config["threshold"] and (signature != state.get("incident") or (config.get("webhook") and not state.get("external_delivery"))):
-        event = {"product": "GENESIS TALK", "state": "incident", "checks": issues}
+        event = {"product": "IMOBI CRM", "state": "incident", "checks": issues}
     elif not issues and state.get("incident"):
-        event = {"product": "GENESIS TALK", "state": "recovered", "checks": []}
+        event = {"product": "IMOBI CRM", "state": "recovered", "checks": []}
     # Always leave an operator-visible, sanitized record. A failed receiver is
     # retried next tick: do not mark an undelivered incident as notified.
     if event:
