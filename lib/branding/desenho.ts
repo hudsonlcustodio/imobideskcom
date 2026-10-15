@@ -2,6 +2,8 @@
 export const SIMBOLO = {
   viewBox: "76 374 90 90",
   arquivo: "/branding/imobi-manual.png",
+  // Oculta somente o início da letra seguinte, fora do símbolo i do manual.
+  mascara: { x: 139, y: 410, width: 27, height: 54 },
 } as const;
 
 export const LOGOTIPO = {

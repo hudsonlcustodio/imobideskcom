@@ -97,6 +97,7 @@ export default async function Icon() {
         <svg viewBox={SIMBOLO.viewBox} width={lado} height={lado}>
           <rect x="0" y="0" width="1672" height="941" fill="#ffffff" />
           <image href={arte} width="1672" height="941" />
+          <rect {...SIMBOLO.mascara} fill="#ffffff" />
         </svg>
       </div>,
       { ...size, headers: CACHE },

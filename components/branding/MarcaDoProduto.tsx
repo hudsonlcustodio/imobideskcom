@@ -25,6 +25,7 @@ function ArteDoProduto({
           externo; branco preserva o lettering azul tambÃ©m no tema escuro. */}
       <rect x="0" y="0" width="1672" height="941" fill="#ffffff" />
       <image href={arte.arquivo} width="1672" height="941" />
+      {simbolo && <rect {...SIMBOLO.mascara} fill="#ffffff" />}
     </svg>
   );
 }
