@@ -39,7 +39,7 @@ case "${1:-}" in
     set_env_var .env SUPABASE_SERVER_URL http://supabase-envoy:8000
     set_env_var .env NEXT_PUBLIC_APP_URL "https://$domain"
     set_env_var .env NEXT_PUBLIC_ADMIN_URL "https://$domain"
-    set_env_var .env APP_NAME 'GENESIS TALK'
+    set_env_var .env APP_NAME 'IMOBI CRM'
     # Keep the kit's directory-derived project name: its private network was
     # already provisioned with that identity. No global fixed network aliases.
     set_env_var .env COMPOSE_PROJECT_NAME "$(nome_do_projeto_atual)"

@@ -82,10 +82,14 @@ try {
   created = true;
   let ready = false;
   for (let i = 0; i < 60; i++) {
-    const probe = spawnSync("docker", ["exec", container, "pg_isready", "-U", "postgres"], {
-      stdio: "ignore",
-    });
-    if (probe.status === 0) {
+    // The image starts a temporary socket-only server during initdb. TCP
+    // becomes available only on the definitive server, after that restart.
+    const probe = spawnSync(
+      "docker",
+      ["exec", container, "psql", "-h", "127.0.0.1", "-U", "postgres", "-d", "postgres", "-X", "-qAtc", "select 1"],
+      { stdio: "ignore" },
+    );
+    if (!probe.error && probe.status === 0) {
       ready = true;
       break;
     }

@@ -1,18 +1,12 @@
-# Identidade Genesis 360
+# Identidade IMOBI CRM
 
-`genesis-360.png` é uma cópia sem alterações do arquivo de logotipo original
-("LOGO-CRM TALK AI", formato PNG)
-fornecido pelo responsável pelo projeto em 08/10/2026. Não é uma reconstrução
-do símbolo. Os componentes usam viewports SVG para enquadrar a marca completa
-ou somente a árvore com o G, mantendo o arquivo original e suas proporções.
+Os originais do manual e do PNG transparente foram preservados sem alterações.
+O PNG transparente apresenta blocos de cor no renderizador; a assinatura positiva
+legível é enquadrada diretamente do manual por viewport SVG, sem redesenhar a marca
+ou alterar proporções. O fundo branco protege seu contraste nos dois temas.
+`imobi-crm.svg` incorpora o manual para o README; UI, favicon e PWA usam a mesma arte.
 
-A versão positiva tem proteção branca também no tema escuro. Logotipos
-configurados pela instalação ou pela organização continuam tendo prioridade.
-
-Paleta do manual enviado: lima `#D4FF00`, verde `#00E676`, azul profundo
-`#071B33`, ciano `#19C2FF`, cinza `#52616F` e branco `#F7FAFC`. Os tons derivados
-mais escuros servem para textos, ações e foco com contraste nas superfícies claras.
-
-O manual indica DIN Next. Como não foi fornecido arquivo dessa fonte, o CSS a
-prioriza quando disponível localmente e usa IBM Plex Sans, já versionada e
-licenciada no projeto, como alternativa incorporada para builds offline.
+Paleta: roxo #7B3FA4, laranja #F57C00, roxo escuro #5E2D83, lilás #D8C2E8,
+grafite #4A4A4A e branco #FFFFFF. Tons derivados atendem contraste nos dois temas.
+Poppins é incorporada em app/fonts/poppins com licença OFL e font-display: swap.
+Marcas configuradas pela instalação ou organização continuam tendo prioridade.
