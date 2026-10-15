@@ -1,21 +1,21 @@
 <div align="center">
 
-<img src="public/branding/genesis-360.png" alt="Logo oficial Genesis 360 — CRM Talk AI" width="640">
+<img src="public/branding/imobi-crm.svg" alt="Logo oficial IMOBI CRM" width="640">
 
-# Genesis 360 Talk AI
+# IMOBI CRM
 
 **Atendimento, vendas e inteligência artificial em uma única plataforma.**
 
 Centralize conversas de WhatsApp, organize seu CRM e conecte sua equipe a agentes
 de IA, com instalação no seu próprio servidor.
 
-[O que faz](#o-que-o-genesis-faz) · [Funcionalidades](#funcionalidades-do-sistema) · [Instalar](#instalação-na-vps) · [Primeiro acesso](#primeiro-acesso)
+[O que faz](#o-que-o-imobi-crm-faz) · [Funcionalidades](#funcionalidades-do-sistema) · [Instalar](#instalação-na-vps) · [Primeiro acesso](#primeiro-acesso)
 
 </div>
 
-## O que o Genesis faz
+## O que o IMOBI CRM faz
 
-O **Genesis 360 Talk AI** reúne atendimento humano, agentes de IA e gestão comercial
+O **IMOBI CRM** reúne atendimento humano, agentes de IA e gestão comercial
 para acompanhar o cliente da primeira conversa ao fechamento.
 
 - **WhatsApp integrado:** atendimento por QR code via WAHA ou canal oficial da
@@ -188,7 +188,7 @@ homologação no ambiente de instalação.
 
 ### Operação no próprio servidor
 
-- **Implantação:** instalação e atualização manual pelos wrappers Genesis.
+- **Implantação:** instalação e atualização manual pelos wrappers de instalação.
 - **Health:** verificação autenticada de banco/API e Auth.
 - **Backup:** bundles com banco, componentes locais necessários, hashes,
   contagens e contrato de permissões/schema/RLS.
@@ -200,13 +200,13 @@ homologação no ambiente de instalação.
   alertas, com ativação do cron no servidor.
 
 A interface conta com navegação para celular, busca de telas e temas claro/escuro.
-A atualização automática Genesis permanece adiada. A liberação para produção
+A atualização automática do IMOBI CRM permanece adiada. A liberação para produção
 continua condicionada à homologação na VPS, integrações reais e ensaios de
 recuperação descritos no [guia Contabo](deploy/contabo/README.md).
 
 ## Instalação na VPS
 
-A instalação do Genesis utiliza o kit próprio em `deploy/contabo`, que prepara e
+A instalação do IMOBI CRM utiliza o kit próprio em `deploy/contabo`, que prepara e
 compila os serviços no servidor. Há duas opções: Supabase na mesma VPS ou um
 projeto Supabase externo.
 
@@ -245,8 +245,8 @@ Os próximos comandos são executados dentro da VPS.
 ### 2. Baixe o projeto
 
 ```bash
-git clone --depth 1 https://github.com/hudsonlcustodio/imobideskcom.git genesis-360-talk-ai
-cd genesis-360-talk-ai
+git clone --depth 1 https://github.com/hudsonlcustodio/imobideskcom.git imobi-crm
+cd imobi-crm
 ```
 
 Escolha **uma** das opções abaixo para uma instalação nova.
@@ -254,7 +254,7 @@ Escolha **uma** das opções abaixo para uma instalação nova.
 ### 3A. Instale com Supabase na mesma VPS
 
 Nesta opção, o kit prepara o Supabase local, gera as credenciais e instala os
-serviços Genesis. Execute em um clone novo, sem `.env` ou instalação anterior.
+serviços IMOBI CRM. Execute em um clone novo, sem `.env` ou instalação anterior.
 
 ```bash
 bash deploy/contabo/install.sh --single-server --domain crm.seudominio.com.br
@@ -301,7 +301,7 @@ bash deploy/contabo/install.sh --external
 ```
 
 O instalador aplica o banco inicial, cria o primeiro administrador, compila e
-inicia os serviços Genesis. Depois do bootstrap, remova `OWNER_PASSWORD` do `.env`.
+inicia os serviços IMOBI CRM. Depois do bootstrap, remova `OWNER_PASSWORD` do `.env`.
 Mantenha o arquivo protegido e fora do Git.
 
 ### Instalação dos guias para assistentes de IA
@@ -314,8 +314,8 @@ bash scripts/instalar-guias.sh --fonte .
 ```
 
 No Codex, a chamada explícita do guia de instalação é `$deskcomm-instalar`.
-Esse identificador técnico é preservado; para instalar o Genesis, oriente o
-assistente a seguir `deploy/contabo/README.md` e os wrappers Genesis.
+Esse identificador técnico é preservado; para instalar o IMOBI CRM, oriente o
+assistente a seguir `deploy/contabo/README.md` e os wrappers de instalação.
 
 Guias copiados **não** se atualizam sozinhos: instale novamente após revisar a
 fonte. O link com `--fonte` acompanha o clone. No Claude Code, o guia global
@@ -344,10 +344,10 @@ bash deploy/contabo/smoke.sh
 ```
 
 Os procedimentos de atualização manual, backup e recuperação estão no
-[guia Contabo](deploy/contabo/README.md). Esta versão utiliza os wrappers Genesis;
+[guia Contabo](deploy/contabo/README.md). Esta versão utiliza os wrappers de instalação;
 seu canal de atualização automática ainda está adiado.
 
 ---
 
 Baseado no [DeskcommCRM](https://github.com/melgarafael/DeskcommCRM), com
-personalizações Genesis e preservação da [licença MIT](LICENSE).
+personalizações IMOBI CRM e preservação da [licença MIT](LICENSE).

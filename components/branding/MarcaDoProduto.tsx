@@ -22,7 +22,7 @@ function ArteDoProduto({
     >
       <title>{nome}</title>
       {/* A arte original permanece intacta. O viewport remove apenas seu respiro
-          externo; branco preserva o lettering azul também no tema escuro. */}
+          externo; branco preserva o lettering azul tambÃ©m no tema escuro. */}
       <rect x="0" y="0" width="1672" height="941" fill="#ffffff" />
       <image href={arte.arquivo} width="1672" height="941" />
     </svg>

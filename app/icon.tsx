@@ -80,7 +80,7 @@ export default async function Icon() {
   const marca = await marcaDaSaida(null);
 
   if (marcaEhADoProduto({ name: marca.nome, logoUrl: marca.logoUrl })) {
-    // O G com a árvore ocupa 90% da aresta, preservando margem no ícone.
+    // O símbolo IMOBI ocupa 90% da aresta, preservando margem no ícone.
     const lado = Math.round(size.width * 0.9);
     const arte = await arteDoProduto();
     return new ImageResponse(

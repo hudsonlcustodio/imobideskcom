@@ -16,7 +16,7 @@
  * runtime em vez de lida do bundle.
  */
 
-export const DEFAULT_APP_NAME = "GENESIS TALK";
+export const DEFAULT_APP_NAME = "IMOBI CRM";
 
 export type Branding = {
   /** Nome exibido na interface e nos títulos de página. */

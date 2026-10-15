@@ -28,10 +28,15 @@ import { Providers } from "./providers";
 import { PublicEnvScript } from "./public-env-script";
 import "./globals.css";
 
-// DIN Next, quando instalada, tem prioridade no CSS. O fallback livre IBM Plex
-// Sans é versionado para builds offline; não redistribuímos uma fonte proprietária.
+// Poppins incorporada com licença OFL; sem dependência de rede no build e no uso.
 const interfaceSans = localFont({
-  src: [{ path: "./fonts/ibm-plex-sans-300-700-latin.woff2", weight: "300 700", style: "normal" }],
+  src: [
+    { path: "./fonts/poppins/Poppins-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/poppins/Poppins-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/poppins/Poppins-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/poppins/Poppins-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/poppins/Poppins-Bold.ttf", weight: "700", style: "normal" },
+  ],
   display: "swap",
   variable: "--font-interface",
 });

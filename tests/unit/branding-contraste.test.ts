@@ -28,7 +28,7 @@ import type { Rampa } from "@/lib/branding/rampa";
 
 const RAIZ = process.cwd();
 const CSS = fs.readFileSync(path.join(RAIZ, "app/globals.css"), "utf8");
-// Preserve upstream adversarial calibration independently of the Genesis product ramp.
+// Preserve upstream adversarial calibration independently of the IMOBI CRM product ramp.
 const REGUA: Regua = extrairRegua(
   fs.readFileSync(path.join(RAIZ, "tests/fixtures/branding-sage-calibration.css"), "utf8"),
 );
@@ -518,11 +518,11 @@ describe("ramo degradado — rampas que não têm solução", () => {
   });
 });
 
-describe("Genesis — os papéis de produto e marcas usam os mesmos pisos", () => {
+describe("IMOBI CRM — os papéis de produto e marcas usam os mesmos pisos", () => {
   it("mantém as âncoras oficiais e passa o contraste nos dois temas", () => {
-    expect(GENESIS.rampaDoProduto[5]).toBe("#d4ff00");
-    expect(GENESIS.rampaDoProduto[7]).toBe("#00e676");
-    expect(GENESIS.rampaDoProduto[10]).toBe("#071b33");
+    expect(GENESIS.rampaDoProduto[5]).toBe("#7b3fa4");
+    expect(GENESIS.rampaDoProduto[7]).toBe("#5e2d83");
+    expect(GENESIS.rampaDoProduto[10]).toBe("#261136");
     for (const tema of [GENESIS.claro, GENESIS.escuro]) {
       const pares = medirPares(tema, GENESIS.rampaDoProduto, 0);
       expect(pares.length).toBeGreaterThanOrEqual(18);
@@ -532,10 +532,10 @@ describe("Genesis — os papéis de produto e marcas usam os mesmos pisos", () =
       ).toEqual([]);
     }
     // Measure the literal CSS foreground too: the generic engine calculates it.
-    expect(razaoDeContraste("#ffffff", "#006b3a")).toBeGreaterThanOrEqual(4.5);
-    expect(razaoDeContraste("#071b33", "#39ed94")).toBeGreaterThanOrEqual(4.5);
+    expect(razaoDeContraste("#ffffff", "#7b3fa4")).toBeGreaterThanOrEqual(4.5);
+    expect(razaoDeContraste("#261136", "#b58ace")).toBeGreaterThanOrEqual(4.5);
   });
-  it("as sementes adversariais também passam com a régua Genesis", () => {
+  it("as sementes adversariais também passam com a régua IMOBI CRM", () => {
     for (const seed of [...FIXTURE, "#7ed321"]) {
       const marca = derivarMarca(seed, GENESIS);
       for (const tema of [marca.claro, marca.escuro]) {
