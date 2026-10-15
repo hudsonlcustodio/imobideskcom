@@ -87,6 +87,7 @@ export async function gerarIconeDoApp(
           >
             <rect x="0" y="0" width="1672" height="941" fill="#ffffff" />
             <image href={arte!} width="1672" height="941" />
+            <rect {...SIMBOLO.mascara} fill="#ffffff" />
           </svg>
         ) : (
           (letraDoIcone(marca.nome) ?? "")

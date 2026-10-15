@@ -394,6 +394,9 @@ const entrouNaEtapa: EventRow = {
 
 describe("o evento de ETAPA da Meta também sai pelo canal", () => {
   beforeEach(() => {
+    // A fixture de etapa precisa estar dentro da janela de sete dias da Meta.
+    // Fixar só Date.now preserva os timers reais usados pelos transportes.
+    vi.spyOn(Date, "now").mockReturnValue(Date.parse("2026-10-07T12:00:00Z"));
     gravados.length = 0;
     tabelasLidas.length = 0;
   });
@@ -456,6 +459,19 @@ describe("o evento de ETAPA da Meta também sai pelo canal", () => {
     expect(f).toHaveBeenCalledOnce();
     expect(String(f.mock.calls[0]![0])).toContain("graph.facebook.com");
     expect(String(f.mock.calls[0]![0])).not.toContain("/v1/whatsapp/conversions");
+  });
+
+  it("a conexão direta recusa etapa fora da janela sem chamar a rede", async () => {
+    vi.mocked(Date.now).mockReturnValue(Date.parse(ENTROU_NA_ETAPA) + 8 * 86_400_000);
+    vi.mocked(createAdminClient).mockReturnValue(
+      fakeAdmin({ sessao: CANAL_COM_PONTE, conexao: "ligada", extras: regraDaEtapa() }) as never,
+    );
+    const f = vi.spyOn(globalThis, "fetch");
+
+    const r = await conversaoDeEtapaMetaHandler.handle(entrouNaEtapa);
+
+    expect(r).toMatchObject({ status: "skipped", detail: "recusado_pela_plataforma" });
+    expect(f).not.toHaveBeenCalled();
   });
 
   it("o reprocessamento de uma etapa parada em `sem_conexao` sai pelo canal com o RETRATO, não com a regra de agora", async () => {
