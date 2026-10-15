@@ -102,6 +102,8 @@ class Operations(unittest.TestCase):
             recovery.replicate(self.args)
 
     def test_retention_removes_whole_old_bundle_only(self):
+        # A fast filesystem can assign identical mtimes to both fixtures.
+        os.utime(self.manifest(), (1, 1))
         self.bundle("002")
         unrelated = self.root / "backups" / "keep.txt"
         unrelated.write_text("keep")
@@ -122,6 +124,7 @@ class Operations(unittest.TestCase):
         self.assertTrue(self.dump.exists())
 
     def test_retention_includes_deploy_subfolders(self):
+        os.utime(self.manifest(), (1, 1))
         nested = self.root / "backups" / "deploy-candidate"
         nested.mkdir()
         for source in list((self.root / "backups").glob("db-001*")):
