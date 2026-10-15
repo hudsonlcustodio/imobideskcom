@@ -2,7 +2,7 @@
   "name": "genesis-talk",
   "version": "1.77.0",
   "private": true,
-  "description": "GENESIS TALK — plataforma omnichannel de atendimento, CRM e agentes de IA, multi-tenant e self-hosted.",
+  "description": "IMOBI CRM — plataforma omnichannel de atendimento, CRM e agentes de IA, multi-tenant e self-hosted.",
   "engines": {
     "node": ">=22"
   },
